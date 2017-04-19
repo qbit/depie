@@ -1,0 +1,15 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "a test module for depie",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "echo 'var d = require(\"depie\"); d.install([\"libsodium\"])' | node"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "depie": "0.0.1"
+  }
+}
