@@ -4,6 +4,8 @@ before_install:
 sudo: required
 dist: trusty
 language: node_js
+env:
+- DEBUG=depie
 node_js:
   - "node"
 
