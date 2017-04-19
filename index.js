@@ -5,7 +5,6 @@ const path = require('path')
 
 function loadData (f) {
   f = path.join(__dirname, f)
-  console.log(f)
   return JSON.parse(fs.readFileSync(f))
 }
 
@@ -64,6 +63,7 @@ function setPlatform () {
   var p = os.platform()
   var release = orToJSON()
   var id = release.id
+  console.log(p, release)
   if (p === 'linux') {
     if (id === 'debian') { p = p + '-' + id }
     if (id.match(/redhat/i)) { p = p + '-redhat' }
