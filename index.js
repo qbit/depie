@@ -82,7 +82,7 @@ var tools = loadData('tools.json')
 exports.install = function (list, cb) {
   var p = setPlatform()
   var tset = tools[p]
-  console.log(p, tset, tools)    
+  console.log(p, tset, tools)
   if (cb) {
     exec(makeCmd(tset, translateList(p, list)), cb)
   } else {
