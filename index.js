@@ -15,7 +15,7 @@ function makeCmd (t, l) {
   }
   c.push(t.install, t.flags)
   var cmd = [c.join(' '), l.join(' ')].join(' ')
-  console.log(cmd)
+
   return cmd
 }
 
@@ -63,10 +63,15 @@ function setPlatform () {
   var p = os.platform()
   var release = orToJSON()
   var id = release.id
-  console.log(p, release)
+
   if (p === 'linux') {
-    if (id === 'debian' || id === 'ubuntu') { p = p + '-debian' }
-    if (id.match(/redhat/i)) { p = p + '-redhat' }
+    if (id.match(/redhat/i)) {
+      p = p + '-redhat'
+    } else {
+      if (id !== 'generic') {
+        p = p + id
+      }
+    }
   }
   return p
 }

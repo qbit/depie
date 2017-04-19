@@ -11,6 +11,10 @@
 	"libsodium": "libsodium-dev",
 	"bzip2": ["bzip2", "libbz2-dev"]
     },
+    "linux-ubuntu": {
+	"libsodium": "libsodium-dev",
+	"bzip2": ["bzip2", "libbz2-dev"]
+    },
     "linux-redhat": {
 	"bzip2": ["bzip2", "bzip2-devel"]
     },
