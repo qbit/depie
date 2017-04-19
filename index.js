@@ -69,7 +69,7 @@ function setPlatform () {
       p = p + '-redhat'
     } else {
       if (id !== 'generic') {
-        p = p + id
+        p = p + '-' + id
       }
     }
   }
