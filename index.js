@@ -63,7 +63,7 @@ function setPlatform () {
   var p = os.platform()
   var release = orToJSON()
   var id = release.id
-
+  console.log(p, release)
   if (p === 'linux') {
     if (id.match(/redhat/i)) {
       p = p + '-redhat'
