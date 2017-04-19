@@ -1,0 +1,32 @@
+{
+  "openbsd": {
+    "install": "pkg_add",
+    "flags": "-z",
+    "priv": "doas"
+  },
+  "freebsd": {
+    "install": "pkg",
+    "flags": "install",
+    "priv": "sudo"
+  },
+  "linux-debian": {
+    "install": "apt-get",
+    "priv": "sudo",
+    "flags": "install -y"
+  },
+  "linux-void": {
+    "install": "xbps-install",
+    "priv": "sudo",
+    "flags": "-y"
+  },
+  "linux-redhat": {
+    "install": "yum",
+    "priv": "sudo",
+    "flags": "install -y"
+  },
+  "darwin": {
+    "install": "brew",
+    "priv": "sudo",
+    "flags": ""
+  }
+}

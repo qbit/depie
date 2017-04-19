@@ -1,0 +1,27 @@
+{
+  "name": "depie",
+  "version": "0.0.1",
+  "description": "Package for managing external dependencies on various systems",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && set -e; for t in test/*.js; do node $t; done"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qbit/depie.git"
+  },
+  "keywords": [
+    "external",
+    "dependencies",
+    "libraries"
+  ],
+  "author": "Aaron Bieber <aaron@bolddaemon.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qbit/depie/issues"
+  },
+  "homepage": "https://github.com/qbit/depie#readme",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  }
+}
