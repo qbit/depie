@@ -61,7 +61,7 @@ function orToJSON () {
 // but linux requires a bit of extra love.
 function setPlatform () {
   var p = os.platform()
-  var release = orToJSON()p
+  var release = orToJSON()
   var id = release.id
   console.log(p, release)
   if (p === 'linux') {
