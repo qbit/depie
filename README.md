@@ -28,9 +28,10 @@ needing them. For example:
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "depie": "0.0.1"
+    "depie": "^0.1.0"
   }
 }
+
 ```
 
 The above would install depie using npm then libsodium using the
