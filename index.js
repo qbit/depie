@@ -65,7 +65,7 @@ function setPlatform () {
   var id = release.id
   console.log(p, release)
   if (p === 'linux') {
-    if (id === 'debian' || id === 'ubuntu') { p = p + '-' + id }
+    if (id === 'debian' || id === 'ubuntu') { p = p + '-debian' }
     if (id.match(/redhat/i)) { p = p + '-redhat' }
   }
   return p
