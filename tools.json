@@ -14,6 +14,11 @@
     "priv": "sudo",
     "flags": "install -y"
   },
+  "linux-ubuntu": {
+    "install": "apt-get",
+    "priv": "sudo",
+    "flags": "install -y"
+  },
   "linux-void": {
     "install": "xbps-install",
     "priv": "sudo",
