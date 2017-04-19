@@ -61,7 +61,7 @@ function orToJSON () {
 // but linux requires a bit of extra love.
 function setPlatform () {
   var p = os.platform()
-  var release = orToJSON()
+  var release = orToJSON()p
   var id = release.id
   console.log(p, release)
   if (p === 'linux') {
@@ -82,6 +82,7 @@ var tools = loadData('tools.json')
 exports.install = function (list, cb) {
   var p = setPlatform()
   var tset = tools[p]
+  console.log(p, tset, tools)    
   if (cb) {
     exec(makeCmd(tset, translateList(p, list)), cb)
   } else {
