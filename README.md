@@ -33,8 +33,21 @@ needing them. For example:
 }
 ```
 
-The above would install depie then libsodium on the target
-machine using its native package manager.
+The above would install depie using npm then libsodium using the
+operating systems native package manager.
 
 Now you can build your native module without needing to repackage and
 rebuild all the source code for libsodium!
+
+## Package aliases
+
+Packages are aliased to allow for a single entrypoint across all
+systems. This requires work, but ultimately, it will be less work/time
+than is spent downloading/compiling the dependent code for every
+install of your native module!
+
+Here is an example of the alias for `libsodium` on Ubuntu:
+
+```
+"libsodium": "libsodium-dev"
+```
