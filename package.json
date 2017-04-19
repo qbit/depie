@@ -1,6 +1,6 @@
 {
   "name": "depie",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Package for managing external dependencies on various systems",
   "main": "index.js",
   "scripts": {
