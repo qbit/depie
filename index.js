@@ -1,3 +1,4 @@
+const debug = require('debug')('depie')
 const exec = require('child_process').exec
 const fs = require('fs')
 const os = require('os')
@@ -16,6 +17,7 @@ function makeCmd (t, l) {
   c.push(t.install, t.flags)
   var cmd = [c.join(' '), l.join(' ')].join(' ')
 
+  debug('Final command: "%s"', cmd)
   return cmd
 }
 
@@ -37,6 +39,8 @@ function translateList (platform, list) {
       t.push(list[i])
     }
   }
+  debug('original package list', list)
+  debug('translated package list', t)
   return t
 }
 
@@ -63,7 +67,7 @@ function setPlatform () {
   var p = os.platform()
   var release = orToJSON()
   var id = release.id
-  console.log(p, release)
+
   if (p === 'linux') {
     if (id.match(/redhat/i)) {
       p = p + '-redhat'
@@ -73,6 +77,7 @@ function setPlatform () {
       }
     }
   }
+  debug('Platform: %s', p)
   return p
 }
 
@@ -82,7 +87,7 @@ var tools = loadData('tools.json')
 exports.install = function (list, cb) {
   var p = setPlatform()
   var tset = tools[p]
-  console.log(p, tset, tools)
+  debug('Using toolset:', tset)
   if (cb) {
     exec(makeCmd(tset, translateList(p, list)), cb)
   } else {

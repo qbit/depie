@@ -24,5 +24,8 @@
   "homepage": "https://github.com/qbit/depie#readme",
   "devDependencies": {
     "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "debug": "^2.6.3"
   }
 }
