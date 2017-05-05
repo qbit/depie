@@ -1,11 +1,24 @@
 before_install:
-  - sudo add-apt-repository ppa:chris-lea/libsodium -y
-  - sudo apt-get update -q
+- echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END
+  CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+- sudo add-apt-repository ppa:chris-lea/libsodium -y
+- sudo apt-get update -q
 sudo: required
 dist: trusty
 language: node_js
 env:
-- DEBUG=depie
+  matrix:
+  - DEBUG=depie
+  global:
+    secure: DC2vyTSr3/Meua6s3PgKtBdj/KOTCrZyP7kGEhM4cafjVXQMp3BD1/hjNbH7DVs0SZ5qBUl/V3mRb/RNLmXnb366a0aDeyMOD+fXOAwRkfvRleEDvt1cXG7cQW3BBOxUA1ctyAGRQ5rIfV+FdL0VILJuYttLoPeUAVhTdXYKqCJQujgUQughruqkehLbhz2u1UL0gOSeNiYYR8ulsEcQMfm3AJuq6pqkDDI4OPdT2SF2b2T0dTfLwjmmL3AK7jy6BwNaLZg/ztACP4TUn2HW/Fw8xeRqMoR60WuY8jN9DpzxdBakZQ845E8JiuMKRBCtuCe4501QULB7InHFxZvfl3hXIKHOzHapF5dIolnlH3QPDNaeJheyI028bTrNfta9N0+BZSEI2qV8KFI8Tdkn5SCxAJFsu/2dr6TK3PCXm9qFX97DXGtTxFr5em65EKN3tkbfOscnKbUTIJhrIPb90ZZRvaW5N61Mk0NLjb+SsBKpY7dLSow5XbkNSTNZSGVPp+Zl5KeiM5gIHvQ4RkpDzkRTcQQraUXioXucChsyT7nya9QgTKi8MHB73cy0lADORZv7s+DUvouF0AAHrfIlZWlCoaYg530Lf6Oi1fkHWtGhhrrbLPTK82YzBmIIatBBSSLtUDdcyJHgATnbKbrtH368OfoEoy33xqFx69RF3/k=
 node_js:
-  - "node"
-
+- node
+addons:
+  coverity_scan:
+    project:
+      name: qbit/node-pushover
+      description: Build submitted via Travis CI
+    notification_email: aaron@bolddaemon.com
+    build_command_prepend: ''
+    build_command: "--no-command --fs-capture-search ./lib/"
+    branch_pattern: coverity

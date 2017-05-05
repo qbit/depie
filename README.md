@@ -1,6 +1,7 @@
 # depie
 
 [![Build Status](https://travis-ci.org/qbit/depie.svg?branch=master)](https://travis-ci.org/qbit/depie)
+[![Coverity Scan Build Status](https://img.shields.io/coverity/scan/12631.svg)](https://scan.coverity.com/projects/qbit-node-pushove://scan.coverity.com/projects/qbit-depie)
 
 A tool that attempts install 3rd party dependencies so you don't have
 to!
