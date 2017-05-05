@@ -21,4 +21,4 @@ addons:
     notification_email: aaron@bolddaemon.com
     build_command_prepend: ''
     build_command: "node index.js"
-    branch_pattern: v.*
+    branch_pattern: master
