@@ -82,11 +82,23 @@ function setPlatform () {
 }
 
 var globalMap = loadData('translation.json')
-var tools = loadData('tools.json')
+var globalTools = loadData('tools.json')
+
+var config = function (map, tools) {
+  if (map) {
+    globalMap = loadData(map) || globalMap
+  }
+  if (tools) {
+    globalTools = loadData(tools) || globalTools
+  }
+}
+
+exports.configure = config
 
 exports.install = function (list, cb) {
+  config()
   var p = setPlatform()
-  var tset = tools[p]
+  var tset = globalTools[p]
   debug('Using toolset:', tset)
   if (cb) {
     exec(makeCmd(tset, translateList(p, list)), cb)

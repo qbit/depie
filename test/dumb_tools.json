@@ -1,0 +1,37 @@
+{
+  "openbsd": {
+    "install": "echo",
+    "flags": "",
+    "priv": ""
+  },
+  "freebsd": {
+    "install": "echo",
+    "flags": "",
+    "priv": ""
+  },
+  "linux-debian": {
+    "install": "echo",
+    "priv": "s",
+    "flags": ""
+  },
+  "linux-ubuntu": {
+    "install": "echo",
+    "priv": "",
+    "flags": ""
+  },
+  "linux-void": {
+    "install": "echo",
+    "priv": "",
+    "flags": "-y"
+  },
+  "linux-redhat": {
+    "install": "echo",
+    "priv": "",
+    "flags": "echo"
+  },
+  "darwin": {
+    "install": "echo",
+    "priv": "",
+    "flags": ""
+  }
+}
