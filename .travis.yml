@@ -16,9 +16,9 @@ node_js:
 addons:
   coverity_scan:
     project:
-      name: qbit/node-pushover
+      name: qbit/depie
       description: Build submitted via Travis CI
     notification_email: aaron@bolddaemon.com
     build_command_prepend: ''
-    build_command: "--no-command --fs-capture-search ./lib/"
-    branch_pattern: coverity
+    build_command: "node index.js"
+    branch_pattern: v.*
